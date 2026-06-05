@@ -1,17 +1,20 @@
 import { createBrowserRouter, Navigate } from "react-router";
-import type { RouteObject } from "react-router";
 import Home from "@/pages/Home";
 
-const routes: RouteObject[] = [
+export const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Navigate to="/home" replace></Navigate>
+    },
+    {
+      path: "/home",
+      element: <Home></Home>
+    },
+  ],
   {
-    path: "/",
-    element: <Navigate to="/home" replace></Navigate>
-  },
-  {
-    path: "/home",
-    element: <Home></Home>
+    basename: "/631-1/", // GitHub 自動部屬, 要對齊 repo 英文名稱
   }
-];
+)
 
-const router = createBrowserRouter(routes);
 export default router;
