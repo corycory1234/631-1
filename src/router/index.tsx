@@ -13,7 +13,7 @@ export const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/631-1/home", // GitHub 自動部屬, 要對齊 repo 英文名稱
+    basename: "/631-1/", // GitHub 自動部屬, 要對齊 repo 英文名稱
   }
 )
 
