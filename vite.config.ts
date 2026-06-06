@@ -11,5 +11,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src")
     }
   },
-  base: "631-1"
+  base: "/631-1/"
 })

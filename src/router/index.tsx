@@ -1,15 +1,22 @@
 import { createBrowserRouter, Navigate } from "react-router";
+import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 
 export const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: <Navigate to="/home" replace></Navigate>
-    },
-    {
-      path: "/home",
-      element: <Home></Home>
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Navigate to="/home" replace />,
+        },
+        {
+          path: "home",
+          element: <Home />,
+        },
+      ],
     },
   ],
   {
