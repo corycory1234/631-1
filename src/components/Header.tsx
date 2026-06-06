@@ -1,19 +1,18 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router'
+import { Link } from 'react-router'
 import Logo from "@/assets/logo.png";
 
-interface NavItem {
-  label: string
-  href: string
-}
+// interface NavItem {
+//   label: string
+//   href: string
+// }
 
-interface HeaderProps {
-  navItems?: NavItem[]
-  ctaLabel?: string
-  onCtaClick?: () => void
-}
+// interface HeaderProps {
+//   navItems?: NavItem[]
+//   ctaLabel?: string
+//   onCtaClick?: () => void
+// }
 
-export default function Header(props: HeaderProps) {
+export default function Header() {
   // const {
   //   navItems = [
   //     { label: 'Products', href: '/products' },
@@ -24,18 +23,18 @@ export default function Header(props: HeaderProps) {
   //   onCtaClick,
   // } = props
 
-  const [menuOpen, setMenuOpen] = useState(false)
-  const location = useLocation()
+  // const [menuOpen, setMenuOpen] = useState(false)
+  // const location = useLocation()
 
-  const handleMenuToggle = () => {
-    setMenuOpen(prev => !prev)
-  }
+  // const handleMenuToggle = () => {
+  //   setMenuOpen(prev => !prev)
+  // }
 
   // const handleCtaClick = () => {
   //   onCtaClick?.()
   // }
 
-  const isActive = (href: string) => location.pathname === href
+  // const isActive = (href: string) => location.pathname === href
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-100">
