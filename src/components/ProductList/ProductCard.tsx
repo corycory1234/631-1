@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import type { Product } from '@/types/product'
+import Modal from '@/components/Modal'
 
 interface ProductCardProps {
   product: Product
@@ -17,10 +19,17 @@ const PLACEHOLDER_GRADIENTS = [
 export default function ProductCard(props: ProductCardProps) {
   const { product, onClick } = props
 
+  const [showModal, setShowModal] = useState(false)
+
   const gradient = PLACEHOLDER_GRADIENTS[product.id % PLACEHOLDER_GRADIENTS.length]
 
   const handleClick = () => {
+    setShowModal(true)
     onClick?.(product)
+  }
+
+  const handleCloseModal = () => {
+    setShowModal(false)
   }
 
   const formattedPrice = new Intl.NumberFormat('zh-TW', {
@@ -30,6 +39,7 @@ export default function ProductCard(props: ProductCardProps) {
   }).format(product.price)
 
   return (
+    <>
     <article
       onClick={handleClick}
       className="group flex flex-col cursor-pointer"
@@ -64,5 +74,10 @@ export default function ProductCard(props: ProductCardProps) {
         </p>
       </div>
     </article>
+
+    {showModal && (
+      <Modal id={product.id} onClose={handleCloseModal} />
+    )}
+  </>
   )
 }

@@ -27,7 +27,7 @@ export default function Home() {
       <ProductList
         products={products}
         loading={loading}
-        title="全部商品"
+        title="All Products"
       />
     </>
   )

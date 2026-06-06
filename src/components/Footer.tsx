@@ -12,20 +12,8 @@ export default function Footer() {
           <img src={Logo} alt="Cherry" />
         </Link>
 
-        {/* <nav className="flex items-center gap-6">
-          <Link to="/products" className="text-sm text-neutral-400 hover:text-neutral-900 transition-colors">
-            Products
-          </Link>
-          <Link to="/collections" className="text-sm text-neutral-400 hover:text-neutral-900 transition-colors">
-            Collections
-          </Link>
-          <Link to="/about" className="text-sm text-neutral-400 hover:text-neutral-900 transition-colors">
-            About
-          </Link>
-        </nav> */}
-
         <p className="text-sm text-neutral-400">
-          © {year}
+          ©Kory Chien {year}
         </p>
       </div>
     </footer>
