@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      window.location.replace(
+        '/631-1/?path=' + window.location.pathname.slice('/631-1/'.length)
+      );
+    </script>
+  </head>
+</html>
+
+<script>
+  const path = new URLSearchParams(window.location.search).get('path');
+  if (path) {
+    window.history.replaceState(null, '', '/631-1/' + path);
+  }
+</script>
